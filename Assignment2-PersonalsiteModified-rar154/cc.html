@@ -1,0 +1,113 @@
+<!--Personal Profile Page
+	Author: Ramki Ravichandran
+	This file was created for assignment purposes only
+	-->
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+	<title>INFSCI 2560: Web Technology and Standards Assignment-1</title>
+	<meta charset="utf-8">
+	<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<p id="dateandtime"></p>
+	<script>
+		var d = new Date();
+		document.getElementById("dateandtime").innerHTML = d;
+		/** 
+		 * Load function
+		 * @param int hobby 
+		 * @return null
+		 * 
+		 * It is used to display or hide the course list, based on the id provided.
+		 * 
+		 * 
+		*/
+		function load(value){
+		if(value==1){
+		    var x = document.getElementById("cc");
+		if (x.style.display === "none") {
+		    x.style.display = "block";
+		} else {
+		    x.style.display = "none";
+		}
+		}
+		else if(value==2){
+		    var x = document.getElementById("oc");
+		if (x.style.display === "none") {
+		    x.style.display = "block";
+		} else {
+		    x.style.display = "none";
+		}
+		}
+		}
+	</script>
+</head>
+<body>
+<br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="container">          
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li><a href="index.html">Home</a></li>
+			    <li><a href="education.html">Education</a></li>
+			    <li><a href="experience.html">Work Experience</a></li>
+			    <li><a href="skills.html">Skills</a></li>  
+			    <li class="active"><a href="cc.html">About Courses</a></li>	
+				<li><a href="personal.html">Personal Info</a></li>
+				<li><a href="feedback.html">Feedback</a></li>      
+			  </ul>
+			</div>
+		</div>
+	</div>
+<br>
+	<div class="row">
+		<div class="col-sm-12">
+			<nav aria-label="breadcrumb">
+			  <ol class="breadcrumb">
+			    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+					<li class="breadcrumb-item active" aria-current="page">About Courses</li>
+			  </ol>
+			</nav>
+		</div>
+	</div>	
+	<br>
+	<div class="row">
+		<div class="col-sm-12">
+			<h1>Courses Completed</h1><button type="button" onclick="load(1)">-</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<ul id="cc" class="list-group">
+				<li class="list-group-item">Database Management</li> 
+				<li class="list-group-item">Algorith Design</li> 
+				<li class="list-group-item">Information Security and Privacy</li> 
+				<li class="list-group-item">Developing Secure Systems</li> 
+				<li class="list-group-item">Network Security</li> 
+				<li class="list-group-item">Seurity Management and Computer Forensics</li>
+				<li class="list-group-item">Cryptography</li>
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<h1>Ongoing Courses</h1><button type="button" onclick="load(2)">-</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<ul id="oc" class="list-group">
+				<li class="list-group-item">Web Technology and Standards</li> 
+				<li class="list-group-item">Social Computing</li> 
+				<li class="list-group-item">Independent Study</li> 
+				<li class="list-group-item">Information Systems Analysis and Design</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>

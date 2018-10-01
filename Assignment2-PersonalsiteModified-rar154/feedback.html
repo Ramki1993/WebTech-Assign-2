@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>INFSCI 2560: Web Technology and Standards Assignment-1</title>
+  <meta charset="utf-8">
+  <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <p id="dateandtime"></p>
+  <script>
+  /*
+  *Funtion to display date
+  */
+    var d = new Date();
+    document.getElementById("dateandtime").innerHTML = d;
+  </script>
+  <script>
+  
+/*
+* validation function checks if the input values are valid.
+*/
+function checkcomment(){
+    name=document.getElementById("name").value;
+    feedback=document.getElementById("feedback").value;
+    console.log(name);
+    console.log(feedback);
+    if (name == null || name == "") {
+        alert("Please enter a valid name");
+        return;
+    }
+    if (feedback == null || feedback == "") {
+        alert("Please enter a valid feedback");
+        return;
+    }
+    comment();
+
+}
+/*
+* comment function creates a div element and inserts the comments in it. 
+*/
+   function comment(){
+     var d = new Date();
+    var n = d.toDateString();
+    var div = document.getElementById("newcomments");
+    var curdiv = document.createElement("div");
+    var name_e=document.createElement("P");
+    var comment_e=document.createElement("P");
+    var date_e= document.createElement("P");
+    var line_break=document.createElement("BR");
+    var name = document.createTextNode(document.getElementById("name").value);
+    var feedback= document.createTextNode(document.getElementById("feedback").value);
+    var date= document.createTextNode(n);
+    curdiv.classList.add("row");
+    div.classList.add("div1");
+    name_e.appendChild(name);
+    date_e.appendChild(date);
+    comment_e.appendChild(feedback);
+    div.appendChild(name_e);
+    div.appendChild(date_e);
+    div.appendChild(comment_e);
+    div.appendChild(line_break);
+    div.appendChild(curdiv);
+   }
+</script>
+</head>
+<body>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="container">          
+        <ul class="nav nav-tabs" role="tablist">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="experience.html">Work Experience</a></li>
+          <li><a href="skills.html">Skills</a></li>  
+          <li><a href="cc.html">Courses Completed</a></li>  
+          <li><a href="personal.html">Personal Info</a></li>
+          <li class="active"><a href="feedback.html">Feedback</a></li>      
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-12">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Feedback</li>
+        </ol>
+      </nav>
+    </div>
+  </div> 
+</div> 
+<br>
+<h1>Please leave your feedbacks here</h1>
+<div class="container">
+    <div class="row">
+      <div class="col-25">
+        <label for="name">Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="name" name="name" placeholder="Your Name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="feedback">Feedback</label>
+      </div>
+      <div class="col-75">
+        <textarea id="feedback" name="feedback" placeholder="Write something.." style="height:200px"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <button id="b1" type="submit" onclick="checkcomment()">Submit</button>
+    </div>
+</div>
+  <div id="newcomments">
+</div>
+</div>
+</body>
+</html>
